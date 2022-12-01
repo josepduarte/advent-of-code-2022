@@ -4,16 +4,16 @@
 elves_calories = [[]]
 with open('input.txt', 'r') as f:
 
-	line = f.readline()
-	while line:
-		try:
-			item_calories = int(line)
-			elves_calories[-1] += [item_calories]
-		except: 
-			# Empty line -> move to next bag/elf
-			elves_calories.append([])
+    line = f.readline()
+    while line:
+        try:
+            item_calories = int(line)
+            elves_calories[-1] += [item_calories]
+        except: 
+            # Empty line -> move to next bag/elf
+            elves_calories.append([])
 
-		line = f.readline()
+        line = f.readline()
 
 elves_calories_per_bag = [sum(ec) for ec in elves_calories]
 elves_calories_per_bag.sort()
