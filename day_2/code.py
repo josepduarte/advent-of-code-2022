@@ -1,3 +1,6 @@
+with open('input.txt', 'r') as f:
+    lines = f.readlines()
+    
 ############
 #  PART 1  #
 ############
@@ -41,9 +44,6 @@ MOVES_OUTCOMES = {
 }
 
 # MAIN
-with open('input.txt', 'r') as f:
-    lines = f.readlines()
-
 score = 0
 for opponent_move, my_move in (l.strip().split(' ') for l in lines):
     score += MOVES_OUTCOMES[my_move][opponent_move]
