@@ -7,10 +7,8 @@ with open('input.txt', 'r') as f:
     line = f.readline()
     while line:
         try:
-            item_calories = int(line)
-            elves_calories[-1] += [item_calories]
+            elves_calories[-1] += [int(line)]
         except: 
-            # Empty line -> move to next bag/elf
             elves_calories.append([])
 
         line = f.readline()
