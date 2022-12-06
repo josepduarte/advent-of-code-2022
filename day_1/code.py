@@ -1,6 +1,8 @@
 ############
 #  PART 1  #
 ############
+print('> Part 1')
+
 elves_calories = [[]]
 with open('input.txt', 'r') as f:
 
@@ -15,10 +17,12 @@ with open('input.txt', 'r') as f:
 
 elves_calories_per_bag = [sum(ec) for ec in elves_calories]
 elves_calories_per_bag.sort()
-print(f'The Elf that is carrying more calories is carrying {elves_calories_per_bag[-1]} calories.')
+print(elves_calories_per_bag[-1])
 
 
 ############
 #  PART 2  #
 ############
-print(f'The top three elves that are carrying more calories are carrying {sum(elves_calories_per_bag[-3:])} calories.')
+print('> Part 2')
+
+print(sum(elves_calories_per_bag[-3:]))

@@ -4,6 +4,7 @@ with open('input.txt', 'r') as f:
 ############
 #  PART 1  #
 ############
+print('> Part 1')
 
 fully_overlapping_assignments = 0
 for line in lines:
@@ -17,11 +18,12 @@ for line in lines:
         or all(section in elf_1_sections_range for section in elf_2_sections_range)
     )
 
-print(f'The number of fully overlapping assignments is {fully_overlapping_assignments}')
+print(fully_overlapping_assignments)
 
 ############
 #  PART 2  #
 ############
+print('> Part 2')
 
 overlapping_assignments = 0
 for line in lines:
@@ -35,4 +37,4 @@ for line in lines:
         or any(section in elf_1_sections_range for section in elf_2_sections_range)
     )
 
-print(f'The number of overlapping assignments is {overlapping_assignments}')
+print(overlapping_assignments)

@@ -1,9 +1,11 @@
 with open('input.txt', 'r') as f:
     lines = f.readlines()
-    
+
 ############
 #  PART 1  #
 ############
+print('> Part 1')
+
 class OpponentMove(object):
     ROCK = 'A'
     PAPER = 'B'
@@ -23,7 +25,6 @@ class ScorePoints(object):
     WIN = 6
     DRAW = 3
     LOSE = 0
-
 
 MOVES_OUTCOMES = {
     MyMove.ROCK: {
@@ -48,11 +49,13 @@ score = 0
 for opponent_move, my_move in (l.strip().split(' ') for l in lines):
     score += MOVES_OUTCOMES[my_move][opponent_move]
 
-print(f'[challenge 1] The expected score is {score}.')
+print(score)
 
 ############
 #  PART 2  #
 ############
+print('> Part 2')
+
 class ExpectedOutcome(object):
     LOSE = 'X'
     DRAW = 'Y'
@@ -82,4 +85,4 @@ score = 0
 for opponent_move, my_move in (l.strip().split(' ') for l in lines):
     score += MOVES_OUTCOMES[opponent_move][my_move]
 
-print(f'[challenge 2] The expected score is {score}.')
+print(score)

@@ -1,4 +1,6 @@
-# --- Day 5: Supply Stacks ---
+# Day 5: Supply Stacks
+
+## Part One
 
 The expedition can depart as soon as the final supplies have been unloaded from the ships. Supplies are stored in stacks of marked crates, but because the needed supplies are buried under many other crates, the crates need to be rearranged.
 The ship has a giant cargo crane capable of moving crates between stacks. To ensure none of the crates get crushed or fall over, the crane operator will rearrange them in a series of carefully-planned steps. After the crates are rearranged, the desired crates will be at the top of each stack.
@@ -60,7 +62,7 @@ Finally, one crate is moved from stack 1 to stack 2:
 The Elves just need to know which crate will end up on top of each stack; in this example, the top crates are C in stack 1, M in stack 2, and Z in stack 3, so you should combine these together and give the Elves the message CMZ.
 After the rearrangement procedure completes, what crate ends up on top of each stack?
 
-# --- Part Two ---
+## Part Two
 
 As you watch the crane operator expertly rearrange the crates, you notice the process isn't following your prediction.
 Some mud was covering the writing on the side of the crane, and you quickly wipe it away. The crane isn't a CrateMover 9000 - it's a CrateMover 9001.
