@@ -15,7 +15,7 @@ for line in lines:
     l[0:] = line.strip()
     trees_grid.append(l)
 
-# Transpose the grid to make it easier for the Up and Bottom 
+# Transpose the grid to make it easier for the Up and Down directions 
 transpose_trees_grid = [list(x) for x in zip(*trees_grid)]
 
 # Count the visible trees
@@ -50,3 +50,47 @@ print(visible_trees_count)
 #  PART 2  #
 ############
 print('> Part 2')
+
+scenic_scores = []
+vertical_length = len(trees_grid)
+horizontal_length = len(trees_grid[0])
+for i in range(0, vertical_length):
+    for j in range(0, horizontal_length):
+        tree_height = trees_grid[i][j]
+
+        # ←
+        left_scenic_score = 0
+        for k in range(j-1, -1, -1):
+            left_scenic_score += 1
+
+            if trees_grid[i][k] >= tree_height:
+                break
+
+        # →
+        right_scenic_score = 0
+        for k in range(j+1, horizontal_length):
+            right_scenic_score += 1
+
+            if trees_grid[i][k] >= tree_height:
+                break
+
+        # ↑ 
+        up_scenic_score = 0
+        for k in range(i-1, -1, -1):
+            up_scenic_score += 1
+
+            if trees_grid[k][j] >= tree_height:
+                break
+
+        # ↓
+        down_scenic_score = 0
+        for k in range(i+1, vertical_length):
+            down_scenic_score += 1
+            
+            if trees_grid[k][j] >= tree_height:
+                break
+
+        # Add the scenic score for this tree to the list
+        scenic_scores += [left_scenic_score*right_scenic_score*up_scenic_score*down_scenic_score]
+
+print(max(scenic_scores))
